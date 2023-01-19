@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Spacing -->
+    <dimen name="spacing_m">16dp</dimen>
+
+</resources>
