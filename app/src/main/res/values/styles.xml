@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Widget.BankingApp.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.BankingApp.ButtonMedium</item>
+        <item name="android:textColor">@color/text_light</item>
+        <item name="cornerRadius">@dimen/corner_radius_buttons</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Widget.BankingApp.Button.Small" parent="Widget.BankingApp.Button">
+        <item name="android:layout_height">@dimen/button_small_height</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.BankingApp.ButtonSmall</item>
+    </style>
+
+    <!-- Bottom navigation -->
+    <style name="Widget.BankingApp.BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:fontFamily">@font/euclid_square_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>
