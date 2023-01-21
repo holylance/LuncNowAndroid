@@ -2,7 +2,6 @@ package com.cockerspaniel.luncnow.screen.main
 
 import android.os.Bundle
 import android.view.View
-
 import com.cockerspaniel.luncnow.R
 import com.cockerspaniel.luncnow.databinding.FragmentMainBinding
 import com.cockerspaniel.luncnow.screen.base.BaseFragment
@@ -45,17 +44,17 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     }
 
     private fun onItemClick(data: BurnLuncItem) {
-        navigateToDetails(data.id)
+        navigateToDetails(data.ranking)
     }
 
     private fun navigateToDetails(id: Int) {
         //safeNavigate(
         //    R.id.to_fragment_order_details,
-        //    bundleOf( ORDER_ID to id )
+        //    bundleOf( RANKING to ranking )
         //)
     }
 
     companion object {
-        const val ORDER_ID = "order_id"
+        const val RANKING = "ranking"
     }
 }

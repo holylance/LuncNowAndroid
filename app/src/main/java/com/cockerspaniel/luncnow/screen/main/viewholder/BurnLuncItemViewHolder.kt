@@ -1,6 +1,5 @@
 package com.cockerspaniel.luncnow.screen.main.viewholder
 
-import androidx.core.net.toUri
 import com.cockerspaniel.luncnow.databinding.BurnLuncItemBinding
 import com.cockerspaniel.luncnow.screen.main.model.BurnLuncItem
 import com.cockerspaniel.luncnow.util.listadapter.BindingViewHolder
@@ -14,10 +13,9 @@ class BurnLuncItemViewHolder(
         with(binding) {
             root.setOnClickListener { primaryAction.invoke(item) }
 
+            ranking.text = item.ranking.toString()
             name.text = item.name
-            description.text = item.description
-            price.text = item.price
-            icon.setImageURI(item.icon.toUri())
+            amount.text = item.amount
         }
     }
 }

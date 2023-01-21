@@ -19,18 +19,19 @@ class MainViewModel : BaseViewModel() {
     private fun createItems(): List<BurnLuncItem> {
         return listOf(
             BurnLuncItem(
-                id = 1,
+                ranking = 1,
                 name = "name1",
-                description = "description1",
-                price = "10",
-                icon = ""
+                amount = "10"
             ),
             BurnLuncItem(
-                id = 2,
+                ranking = 2,
                 name = "name2",
-                description = "description2",
-                price = "100",
-                icon = ""
+                amount = "100"
+            ),
+            BurnLuncItem(
+                ranking = 3,
+                name = "name3",
+                amount = "700"
             )
         )
     }
