@@ -2,76 +2,85 @@
 <resources>
 
     <!-- Font weights -->
-    <style name="TextAppearance.BankingApp" parent="@android:style/TextAppearance">
+    <style name="TextAppearance.LuncNow" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">@font/euclid_square_regular</item>
         <item name="fontFamily">@font/euclid_square_regular</item>
         <item name="android:textColor">@color/text_primary</item>
     </style>
 
-    <!-- Re-styling fonts -->
-    <style name="TextAppearance.BankingApp.ReStyling" parent="TextAppearance.BankingApp" />
-
-    <style name="TextAppearance.BankingApp.ReStyling.XXXS">
+    <style name="TextAppearance.LuncNow.XXXS">
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">1dp</item>
         <item name="android:lineSpacingMultiplier">1.23</item>
         <item name="android:minHeight">16dp</item>
     </style>
 
-    <style name="TextAppearance.BankingApp.ReStyling.XXS">
+    <style name="TextAppearance.LuncNow.XXS">
         <item name="android:textSize">13sp</item>
         <item name="android:lineSpacingExtra">1dp</item>
         <item name="android:lineSpacingMultiplier">1.3</item>
         <item name="android:minHeight">18dp</item>
     </style>
 
-    <style name="TextAppearance.BankingApp.ReStyling.XS">
+    <style name="TextAppearance.LuncNow.XS">
         <item name="android:textSize">15sp</item>
         <item name="android:lineSpacingExtra">1dp</item>
         <item name="android:lineSpacingMultiplier">1.24</item>
         <item name="android:minHeight">20dp</item>
     </style>
 
-    <style name="TextAppearance.BankingApp.ReStyling.S">
+    <style name="TextAppearance.LuncNow.S">
         <item name="android:textSize">17sp</item>
         <item name="android:lineSpacingExtra">1dp</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
         <item name="android:minHeight">22dp</item>
     </style>
 
-    <style name="TextAppearance.BankingApp.ReStyling.M">
+    <style name="TextAppearance.LuncNow.M">
         <item name="android:textSize">20sp</item>
         <item name="android:lineSpacingExtra">1dp</item>
         <item name="android:lineSpacingMultiplier">1.35</item>
         <item name="android:minHeight">28dp</item>
     </style>
 
-    <style name="TextAppearance.BankingApp.ReStyling.L">
+    <style name="TextAppearance.LuncNow.L">
         <item name="android:textSize">24sp</item>
         <item name="android:lineSpacingExtra">1dp</item>
         <item name="android:lineSpacingMultiplier">1.23</item>
         <item name="android:minHeight">31dp</item>
     </style>
 
-    <style name="TextAppearance.BankingApp.ReStyling.XL">
+    <style name="TextAppearance.LuncNow.XL">
         <item name="android:textSize">32sp</item>
         <item name="android:lineSpacingExtra">1dp</item>
         <item name="android:lineSpacingMultiplier">1.27</item>
         <item name="android:minHeight">42dp</item>
     </style>
 
-    <style name="TextAppearance.BankingApp.ReStyling.XXL">
+    <style name="TextAppearance.LuncNow.XXL">
         <item name="android:textSize">34sp</item>
         <item name="android:lineSpacingExtra">1dp</item>
         <item name="android:lineSpacingMultiplier">1.14</item>
         <item name="android:minHeight">41dp</item>
     </style>
 
-    <style name="TextAppearance.BankingApp.ReStyling.XXXL">
+    <style name="TextAppearance.LuncNow.XXXL">
         <item name="android:textSize">48sp</item>
         <item name="android:lineSpacingExtra">1dp</item>
         <item name="android:lineSpacingMultiplier">1.26</item>
         <item name="android:minHeight">62dp</item>
+    </style>
+
+    <style name="TextAppearance.LuncNow.TableRowTitle" parent="TextAppearance.LuncNow.S">
+        <item name="android:fontFamily">@font/euclid_square_regular</item>
+        <item name="fontFamily">@font/euclid_square_regular</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextAppearance.LuncNow.Button" parent="TextAppearance.LuncNow.S">
+        <item name="android:fontFamily">@font/euclid_square_medium</item>
+        <item name="fontFamily">@font/euclid_square_medium</item>
+        <item name="android:letterSpacing">-0.01</item>
     </style>
 
 </resources>
