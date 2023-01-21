@@ -17,6 +17,18 @@
         <item name="android:textAppearance">@style/TextAppearance.LuncNow.Button</item>
     </style>
 
+    <style name="Widget.LuncNow.Textview" parent="@style/TextAppearance.LuncNow.S">
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="Widget.LuncNow.TextviewHuge" parent="@style/TextAppearance.LuncNow.L">
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
     <!-- Bottom navigation -->
     <style name="Widget.LuncNow.BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:fontFamily">@font/euclid_square_regular</item>

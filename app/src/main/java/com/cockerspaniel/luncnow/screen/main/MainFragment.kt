@@ -7,7 +7,6 @@ import com.cockerspaniel.luncnow.databinding.FragmentMainBinding
 import com.cockerspaniel.luncnow.screen.base.BaseFragment
 import com.cockerspaniel.luncnow.screen.main.adapter.BurnLuncTypeFactory
 import com.cockerspaniel.luncnow.screen.main.model.BurnLuncItem
-import com.cockerspaniel.luncnow.util.ViewState
 import com.cockerspaniel.luncnow.util.listadapter.ListItemAction
 import com.cockerspaniel.luncnow.util.listadapter.ListItemAdapter
 import com.cockerspaniel.luncnow.util.observe
@@ -26,20 +25,17 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.listOrder.adapter = adapter
+        binding.listItems.adapter = adapter
     }
 
     override fun onDestroyView() {
-        binding.listOrder.adapter = null
+        binding.listItems.adapter = null
         super.onDestroyView()
     }
 
     override fun observeViewState() {
         observe(viewModel.viewState) { state ->
-            when (state) {
-                is ViewState.Success -> adapter.setItems(state.value)
-                else -> adapter.setItems(emptyList())
-            }
+            adapter.setItems(state)
         }
     }
 
