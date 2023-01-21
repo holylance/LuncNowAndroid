@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- default theme colors -->
+    <color name="primary">#148DEA</color>
+    <color name="primary_dark">#0A78CC</color>
+
+    <color name="dkb_blau">#148dea</color>
+    <color name="shadow">#88045EB8</color>
+    <color name="background_primary">#ffffff</color>
+    <color name="background_secondary">#f3f9fe</color>
+
+    <color name="chevron">#a80f2f47</color>
+    <color name="separator">#141d5f91</color>
+    <color name="text_primary">#f20d0e0f</color>
+    <color name="text_secondary">#d61b2b38</color>
+    <color name="text_tertiary">#a80f2f47</color>
+    <color name="text_dark">#1c1d1e</color>
+    <color name="text_light">#ffffff</color>
+    <color name="headline">#000000</color>
+    <color name="text_copy">#e30f151a</color>
+
     <color name="control_primary">#006ac7</color>
     <color name="control_background_primary">#0976d6</color>
+    <color name="control_background_secondary">#170090ff</color>
 
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="destructive_primary">#cc2a14</color>
+    <color name="destructive_background_primary">#d6301a</color>
+    <color name="destructive_background_secondary">#1cf76454</color>
+
+    <color name="info_label">#e6124a82</color>
+    <color name="success_background_primary">#11a6a1</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
 </resources>
