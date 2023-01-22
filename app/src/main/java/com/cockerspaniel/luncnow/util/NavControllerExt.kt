@@ -20,7 +20,8 @@ fun NavController.safeNavigate(
         ?.getAction(navActionId)
         ?.navOptions
         ?.let {
-            animationBuilder.setPopUpTo(it.popUpTo, it.isPopUpToInclusive)
+            // TODO: Fix me.
+            //animationBuilder.setPopUpTo(it.popUpTo, it.isPopUpToInclusive)
             animationBuilder.setLaunchSingleTop(it.shouldLaunchSingleTop())
         }
         .ifNull { error("No action found with id $navActionId") }

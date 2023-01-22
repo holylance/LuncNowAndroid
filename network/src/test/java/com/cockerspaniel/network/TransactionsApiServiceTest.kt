@@ -1,9 +1,9 @@
 package com.cockerspaniel.network
 
+import com.cockerspaniel.network.internal.TransactionsApiService
 import com.google.gson.GsonBuilder
-import com.cockerspaniel.network.internal.LoginApiService
-import com.cockerspaniel.network.mockdata.LoginRequestMock
-import com.cockerspaniel.network.mockdata.LoginTokenMock
+import com.cockerspaniel.network.mockdata.TempRequestMock
+import com.cockerspaniel.network.mockdata.TransactionMock
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -14,7 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-internal class LoginApiServiceTest {
+internal class TransactionsApiServiceTest {
     private val mockWebServer = MockWebServer()
     private val httpClient = OkHttpClient.Builder()
     private val gson = GsonBuilder().create()
@@ -27,8 +27,8 @@ internal class LoginApiServiceTest {
         )
         .client(httpClient.build())
         .build()
-    private val service = retrofit.create(LoginApiService::class.java)
-    private val loginToken = LoginTokenMock.generate()
+    private val service = retrofit.create(TransactionsApiService::class.java)
+    private val transaction = TransactionMock.generate()
 
     @After
     fun stopServer() {
@@ -59,7 +59,7 @@ internal class LoginApiServiceTest {
         fun `postLogin handles successful response`() {
             setSuccessResponseInMockWebServer(loginToken)
 
-            service.postLogin(LoginRequestMock.generate())
+            service.postLogin(TempRequestMock.generate())
                 .test()
                 .assertValue {
                     it.token == loginToken.token
@@ -71,7 +71,7 @@ internal class LoginApiServiceTest {
         fun `getTodos handles error response`() {
             setFailedResponseInMockWebServer()
 
-            service.postLogin(LoginRequestMock.generate())
+            service.postLogin(TempRequestMock.generate())
                 .test()
                 .assertError { throwable ->
                     throwable.message == "HTTP 401 Client Error"
