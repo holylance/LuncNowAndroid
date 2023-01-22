@@ -1,16 +1,16 @@
 package com.cockerspaniel.network
 
-import com.cockerspaniel.network.model.Product
+import com.cockerspaniel.network.model.TransactionList
 import io.reactivex.rxjava3.core.Single
 
 /**
  * ProductService to call respective product endpoints
  */
-interface ProductService {
+interface TransactionsService {
     /**
      * Returns a list of product
      *
      * @return list of product or error
      */
-    fun getProducts(token: String): Single<List<Product>>
+    fun getTransactions(): Single<TransactionList>
 }

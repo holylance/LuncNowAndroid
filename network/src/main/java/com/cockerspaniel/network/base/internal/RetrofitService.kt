@@ -23,6 +23,6 @@ internal class RetrofitService(
     private val httpClient = OkHttpClient.Builder().build()
 
     companion object {
-        private const val apiUrl = "https://qo7vrra66k.execute-api.eu-west-1.amazonaws.com"
+        private const val apiUrl = "https://columbus-fcd.terra.dev/v1/"
     }
 }

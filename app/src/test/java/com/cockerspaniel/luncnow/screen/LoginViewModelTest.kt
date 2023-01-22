@@ -1,11 +1,8 @@
 package com.cockerspaniel.luncnow.screen
 
 import com.cockerspaniel.luncnow.InstantExecutorExtension
-import com.cockerspaniel.network.LoginService
 import com.cockerspaniel.luncnow.screen.login.LoginViewModel
 import com.cockerspaniel.luncnow.util.TokenManager
-import com.cockerspaniel.network.internal.model.LoginRequest
-import com.cockerspaniel.network.model.LoginToken
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -20,7 +17,7 @@ class LoginViewModelTest {
 
     private val apiService: LoginService = mock()
     private val tokenManager: TokenManager = mock()
-    private val loginRequest = LoginRequest(email = "email", password = "password")
+    private val tempRequest = TempRequest(email = "email", password = "password")
     private val loginToken = LoginToken(token = "token")
 
     @BeforeEach
@@ -32,7 +29,7 @@ class LoginViewModelTest {
     @Test
     fun `viewState should emit posted login token`() {
         val viewModel = LoginViewModel(apiService, tokenManager)
-        viewModel.login(loginRequest.email, loginRequest.password)
+        viewModel.login(tempRequest.email, tempRequest.password)
 
         verify(apiService).login(any(), any())
         verify(tokenManager).setToken(any())
