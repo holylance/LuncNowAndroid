@@ -26,6 +26,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.listItems.adapter = adapter
+        viewModel.fetchTransactions()
     }
 
     override fun onDestroyView() {

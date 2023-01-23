@@ -17,13 +17,13 @@
         <item name="android:textAppearance">@style/TextAppearance.LuncNow.Button</item>
     </style>
 
-    <style name="Widget.LuncNow.Textview" parent="@style/TextAppearance.LuncNow.S">
+    <style name="Widget.LuncNow.Textview" parent="@style/TextAppearance.LuncNow.M">
         <item name="android:singleLine">true</item>
         <item name="android:maxLines">1</item>
         <item name="android:padding">4dp</item>
     </style>
 
-    <style name="Widget.LuncNow.TextviewHuge" parent="@style/TextAppearance.LuncNow.L">
+    <style name="Widget.LuncNow.TextviewHuge" parent="@style/TextAppearance.LuncNow.XL">
         <item name="android:singleLine">true</item>
         <item name="android:maxLines">1</item>
         <item name="android:padding">4dp</item>
