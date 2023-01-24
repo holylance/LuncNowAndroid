@@ -24,7 +24,7 @@ internal class TransactionsServiceImplTest {
     }
 
     @Nested
-    inner class Transaction {
+    inner class Log {
         @Test
         fun `when call postTransaction, reach TransactionApiService's postTransaction`() {
             val transactionRequest = TempRequestMock.generate()

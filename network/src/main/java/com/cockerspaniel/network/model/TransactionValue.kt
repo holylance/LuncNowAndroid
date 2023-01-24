@@ -5,6 +5,5 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class TransactionValue(
-    val fee: Fee,
     val memo: String
 ) : Parcelable

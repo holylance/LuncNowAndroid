@@ -1,10 +1,10 @@
 package com.cockerspaniel.network.mockdata
 
-import com.cockerspaniel.network.model.Transaction
+import com.cockerspaniel.network.model.Log
 
 object TransactionMock {
-    fun generate(): Transaction {
-        return Transaction(
+    fun generate(): Log {
+        return Log(
 
         )
     }

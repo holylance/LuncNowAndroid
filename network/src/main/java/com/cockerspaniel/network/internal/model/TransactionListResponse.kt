@@ -4,7 +4,7 @@ import com.cockerspaniel.network.model.TransactionList
 
 internal data class TransactionListResponse(
     val limit: Int,
-    val txs: List<TransactionInfoResponse>
+    val txs: List<TransactionResponse>
 ) {
 
     internal fun toTransactionList() = TransactionList(
