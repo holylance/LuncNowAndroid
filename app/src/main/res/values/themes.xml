@@ -4,7 +4,7 @@
     <!-- Base application theme. -->
     <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowNoTitle">true</item>
-        <item name="android:statusBarColor">@color/background_secondary</item>
+        <item name="android:statusBarColor">@color/info_label</item>
         <item name="android:windowBackground">@color/background_secondary</item>
         <item name="android:defaultFocusHighlightEnabled" tools:targetApi="o">false</item>
         <item name="android:actionMenuTextAppearance">@style/Theme.LuncNow.LowerCaseMenuTextAppearance</item>

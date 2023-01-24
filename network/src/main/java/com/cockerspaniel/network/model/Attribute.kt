@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class TransactionList(
-    val limit: Int,
-    val txs: List<Transaction>
+data class Attribute(
+    val key: String,
+    val value: String,
 ) : Parcelable

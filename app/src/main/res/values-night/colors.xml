@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="dkb_blau">#148dea</color>
     <color name="shadow">#88045EB8</color>
     <color name="background_primary">#131f29</color>
     <color name="background_secondary">#09131c</color>
