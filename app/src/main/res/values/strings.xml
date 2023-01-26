@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">LuncNow</string>
+    <string name="lunc_burn_title">Top 100 Txs</string>
+    <string name="lunc_burn_description">Sent Lunc to burn recently.</string>
+    <string name="error_message">Something wrong. Please try it later.</string>
 </resources>
