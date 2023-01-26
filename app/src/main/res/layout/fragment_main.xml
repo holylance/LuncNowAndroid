@@ -15,6 +15,6 @@
         android:paddingBottom="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listitem="@layout/burn_lunc_item" />
+        tools:listitem="@layout/lunc_burn_item" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
