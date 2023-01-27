@@ -5,5 +5,5 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class TransactionInfo(
-    val tx: Transaction
+    val value: TransactionValue
 ) : Parcelable

@@ -3,10 +3,8 @@ package com.cockerspaniel.luncnow.screen.main.model
 import com.cockerspaniel.luncnow.util.listadapter.ListItemModel
 import com.cockerspaniel.luncnow.util.listadapter.ListItemTypeFactory
 
-data class BurnLuncItem(
-    val ranking: Int,
-    val name: String,
-    val amount: String
+data class LuncDescriptionItem(
+    val id: Long = 0L,
 ) : ListItemModel {
     override fun type(typeFactory: ListItemTypeFactory) = typeFactory.type(this)
 }

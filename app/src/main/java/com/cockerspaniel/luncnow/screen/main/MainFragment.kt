@@ -2,13 +2,15 @@ package com.cockerspaniel.luncnow.screen.main
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.cockerspaniel.luncnow.R
 import com.cockerspaniel.luncnow.databinding.FragmentMainBinding
 import com.cockerspaniel.luncnow.screen.base.BaseFragment
 import com.cockerspaniel.luncnow.screen.main.adapter.BurnLuncTypeFactory
-import com.cockerspaniel.luncnow.screen.main.model.BurnLuncItem
+import com.cockerspaniel.luncnow.screen.main.model.LuncBurnItem
 import com.cockerspaniel.luncnow.util.listadapter.ListItemAction
 import com.cockerspaniel.luncnow.util.listadapter.ListItemAdapter
+import com.cockerspaniel.luncnow.util.listadapter.ListItemModel
 import com.cockerspaniel.luncnow.util.observe
 import com.cockerspaniel.luncnow.util.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -16,7 +18,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MainFragment : BaseFragment(R.layout.fragment_main) {
 
     private val binding by viewBinding(FragmentMainBinding::bind)
-    private val adapter = ListItemAdapter<BurnLuncItem, ListItemAction>(
+    private val adapter = ListItemAdapter<ListItemModel, ListItemAction>(
         typeFactory = BurnLuncTypeFactory(),
         primaryAction = ::onItemClick
     )
@@ -26,6 +28,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.listItems.adapter = adapter
+        viewModel.fetchTransactions()
     }
 
     override fun onDestroyView() {
@@ -37,10 +40,17 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         observe(viewModel.viewState) { state ->
             adapter.setItems(state)
         }
+
+        observe(viewModel.errorEvent) {
+            Toast.makeText(context, R.string.error_message, Toast.LENGTH_SHORT).show()
+        }
     }
 
-    private fun onItemClick(data: BurnLuncItem) {
-        navigateToDetails(data.ranking)
+    private fun onItemClick(data: ListItemModel) {
+        when(data) {
+            is LuncBurnItem -> navigateToDetails(data.ranking)
+            else -> Unit
+        }
     }
 
     private fun navigateToDetails(id: Int) {

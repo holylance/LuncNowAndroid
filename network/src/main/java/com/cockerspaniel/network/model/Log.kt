@@ -4,7 +4,6 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Amount(
-    val denom: String,
-    val amount: String,
+data class Log(
+    val events: List<Event>
 ) : Parcelable

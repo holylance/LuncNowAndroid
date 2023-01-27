@@ -3,17 +3,16 @@ package com.cockerspaniel.network.internal
 import com.cockerspaniel.network.internal.model.TransactionListResponse
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Retrofit
-import retrofit2.http.Field
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Query
 
 internal interface TransactionsApiService {
 
     @GET("v1/txs")
     fun getTransactions(
-        @Path("account")
+        @Query("account")
         account: String,
-        @Field("limit")
+        @Query("limit")
         limit: Int
     ): Single<TransactionListResponse>
 

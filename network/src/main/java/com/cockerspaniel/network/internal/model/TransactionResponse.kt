@@ -1,15 +1,14 @@
 package com.cockerspaniel.network.internal.model
 
-import android.os.Parcelable
 import com.cockerspaniel.network.model.Transaction
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
-data class TransactionResponse(
-    val value: TransactionValueResponse
-) : Parcelable {
+internal data class TransactionResponse(
+    val tx: TransactionInfoResponse,
+    val logs: List<LogsResponse>
+) {
 
-    fun toTransaction() = Transaction(
-        value = value.toTransactionValue()
+    internal fun toTransactionInfo() = Transaction(
+        tx = tx.toTransactionInfo(),
+        logs = logs.map { it.toLogs() }
     )
 }
