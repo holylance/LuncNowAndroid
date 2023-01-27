@@ -61,7 +61,6 @@ class MainViewModel(
             listOf(LuncDescriptionItem()) +
                 listItems.sortedByDescending { it.amountNum }.map { it.copy(ranking = ranking++) }
         )
-        _errorEvent.postValue(Throwable(""))
     }
 
     private fun getMemo(memo: String): String {
