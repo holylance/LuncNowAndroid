@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">루클나우</string>
+
+    <string name="lunc_burn_title">100개 트랜잭션 순위</string>
+    <string name="lunc_burn_description">최근에 소각된 루클의 수량 기준.</string>
+    <string name="error_message">무언가 잘못되었습니다. 다시 해보세요.</string>
+
+    <string name="bottom_menu_lunc_burn">최근 소각</string>
+    <string name="bottom_menu_staking">스테이킹 순위</string>
+</resources>
