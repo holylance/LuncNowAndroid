@@ -1,9 +1,9 @@
-package com.cockerspaniel.luncnow.screen.main.viewholder
+package com.cockerspaniel.luncnow.screen.burn.viewholder
 
 import com.cockerspaniel.luncnow.databinding.LuncBurnItemBinding
 import com.cockerspaniel.luncnow.databinding.LuncDescriptionItemBinding
-import com.cockerspaniel.luncnow.screen.main.model.LuncBurnItem
-import com.cockerspaniel.luncnow.screen.main.model.LuncDescriptionItem
+import com.cockerspaniel.luncnow.screen.burn.model.LuncBurnItem
+import com.cockerspaniel.luncnow.screen.burn.model.LuncDescriptionItem
 import com.cockerspaniel.luncnow.util.listadapter.BindingViewHolder
 import com.cockerspaniel.luncnow.util.listadapter.ListItemAction
 

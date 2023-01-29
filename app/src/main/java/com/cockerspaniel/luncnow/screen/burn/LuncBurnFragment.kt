@@ -1,13 +1,13 @@
-package com.cockerspaniel.luncnow.screen.main
+package com.cockerspaniel.luncnow.screen.burn
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.cockerspaniel.luncnow.R
-import com.cockerspaniel.luncnow.databinding.FragmentMainBinding
+import com.cockerspaniel.luncnow.databinding.FragmentLuncBurnBinding
 import com.cockerspaniel.luncnow.screen.base.BaseFragment
-import com.cockerspaniel.luncnow.screen.main.adapter.BurnLuncTypeFactory
-import com.cockerspaniel.luncnow.screen.main.model.LuncBurnItem
+import com.cockerspaniel.luncnow.screen.burn.adapter.LuncBurnTypeFactory
+import com.cockerspaniel.luncnow.screen.burn.model.LuncBurnItem
 import com.cockerspaniel.luncnow.util.listadapter.ListItemAction
 import com.cockerspaniel.luncnow.util.listadapter.ListItemAdapter
 import com.cockerspaniel.luncnow.util.listadapter.ListItemModel
@@ -15,14 +15,14 @@ import com.cockerspaniel.luncnow.util.observe
 import com.cockerspaniel.luncnow.util.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainFragment : BaseFragment(R.layout.fragment_main) {
+class LuncBurnFragment : BaseFragment(R.layout.fragment_lunc_burn) {
 
-    private val binding by viewBinding(FragmentMainBinding::bind)
+    private val binding by viewBinding(FragmentLuncBurnBinding::bind)
     private val adapter = ListItemAdapter<ListItemModel, ListItemAction>(
-        typeFactory = BurnLuncTypeFactory(),
+        typeFactory = LuncBurnTypeFactory(),
         primaryAction = ::onItemClick
     )
-    override val viewModel by viewModel<MainViewModel>()
+    override val viewModel by viewModel<LuncBurnViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

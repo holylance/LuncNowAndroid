@@ -27,6 +27,11 @@
     <color name="destructive_background_primary">#d6301a</color>
     <color name="destructive_background_secondary">#1cf76454</color>
 
+    <color name="tabbar_selected">#0072d6</color>
+    <color name="tabbar_enabled">#a80f2f47</color>
+    <color name="bottom_navigation_shadow">#045EB8</color>
+    <color name="background_navigation">#f3f9fe</color>
+
     <color name="info_label">#e6124a82</color>
     <color name="success_background_primary">#11a6a1</color>
 

@@ -1,4 +1,4 @@
-package com.cockerspaniel.luncnow.screen.main.model
+package com.cockerspaniel.luncnow.screen.burn.model
 
 import com.cockerspaniel.luncnow.util.listadapter.ListItemModel
 import com.cockerspaniel.luncnow.util.listadapter.ListItemTypeFactory

@@ -46,6 +46,14 @@ abstract class BaseFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes) {
     }
 
     /**
+     * Method for overriding back press handling in the Fragment. Return true if no further
+     * back press effects should take place, otherwise false.
+     */
+    open fun onBackPressed(): Boolean {
+        return false
+    }
+
+    /**
      * Safe navigation for Fragments. Fragments should always use this instead of
      * directly calling the NavController extension method.
      */
