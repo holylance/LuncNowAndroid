@@ -1,6 +1,7 @@
 package com.cockerspaniel.luncnow.screen.base
 
 import androidx.lifecycle.ViewModel
+import com.cockerspaniel.luncnow.screen.burn.LuncBurnViewModel
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 
@@ -19,8 +20,16 @@ abstract class BaseViewModel : ViewModel() {
         compositeDisposable.add(disposable)
     }
 
+    protected fun getMemo(memo: String): String {
+        return memo.ifBlank { NO_NAME }
+    }
+
     override fun onCleared() {
         compositeDisposable.dispose()
         super.onCleared()
+    }
+
+    companion object {
+        private const val NO_NAME = "No Name"
     }
 }

@@ -63,10 +63,6 @@ class LuncBurnViewModel(
         )
     }
 
-    private fun getMemo(memo: String): String {
-        return memo.ifBlank { NO_NAME }
-    }
-
     private fun onError(throwable: Throwable) {
         _errorEvent.postValue(throwable)
     }
@@ -75,7 +71,6 @@ class LuncBurnViewModel(
         private const val RECEIVED = "coin_received"
         private const val LUNC = "uluna"
         private const val DECIMAL = "0.000001"
-        private const val NO_NAME = "No Name"
         private const val EMPTY_STRING = ""
     }
 }
