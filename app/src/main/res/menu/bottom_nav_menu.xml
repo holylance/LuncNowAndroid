@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/main_nav_graph"
+        android:id="@+id/burn_nav_graph"
         android:icon="@drawable/ic_list"
         android:title="@string/bottom_menu_lunc_burn" />
 
     <item
-        android:id="@+id/card_control_nav_graph"
+        android:id="@+id/staking_nav_graph"
         android:icon="@drawable/ic_competition"
         android:title="@string/bottom_menu_staking" />
 
