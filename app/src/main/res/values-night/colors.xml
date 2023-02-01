@@ -23,6 +23,10 @@
     <color name="destructive_background_primary">#c92914</color>
     <color name="destructive_background_secondary">#26d93f2e</color>
 
+    <color name="tabbar_selected">#1e99f7</color>
+    <color name="tabbar_enabled">#9ecce9ff</color>
+    <color name="background_navigation">#1d2a36</color>
+
     <color name="info_label">#e09ed5ff</color>
     <color name="success_background_primary">#11a6a1</color>
 

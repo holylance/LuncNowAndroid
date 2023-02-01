@@ -29,9 +29,20 @@
         <item name="android:padding">4dp</item>
     </style>
 
+    <style name="Widget.LuncNow.TextviewSmall" parent="@style/TextAppearance.LuncNow.S">
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
     <!-- Bottom navigation -->
-    <style name="Widget.LuncNow.BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+    <style name="Widget.BankingApp.BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:fontFamily">@font/euclid_square_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Widget.BankingApp.BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:fontFamily">@font/euclid_square_medium</item>
         <item name="android:textSize">12sp</item>
     </style>
 

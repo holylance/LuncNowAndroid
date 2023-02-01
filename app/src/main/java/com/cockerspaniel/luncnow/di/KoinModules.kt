@@ -2,7 +2,8 @@ package com.cockerspaniel.luncnow.di
 
 import com.cockerspaniel.luncnow.repository.TransactionsRepository
 import com.google.gson.GsonBuilder
-import com.cockerspaniel.luncnow.screen.main.MainViewModel
+import com.cockerspaniel.luncnow.screen.burn.LuncBurnViewModel
+import com.cockerspaniel.luncnow.screen.staking.StakingViewModel
 import com.cockerspaniel.luncnow.usecase.TransactionsUseCase
 import com.cockerspaniel.luncnow.util.rx.DefaultSchedulerProvider
 import com.cockerspaniel.luncnow.util.rx.SchedulerProvider
@@ -25,5 +26,6 @@ val appModule = module {
 
     single { TransactionsApiFactory.create() }
 
-    viewModelOf(::MainViewModel)
+    viewModelOf(::LuncBurnViewModel)
+    viewModelOf(::StakingViewModel)
 }

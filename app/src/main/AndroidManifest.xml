@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_csl_red"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name="com.cockerspaniel.luncnow.screen.MainActivity"
+        <activity android:name="com.cockerspaniel.luncnow.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,10 +1,10 @@
-package com.cockerspaniel.luncnow.screen.main
+package com.cockerspaniel.luncnow.screen.burn
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.cockerspaniel.luncnow.screen.base.BaseViewModel
-import com.cockerspaniel.luncnow.screen.main.model.LuncBurnItem
-import com.cockerspaniel.luncnow.screen.main.model.LuncDescriptionItem
+import com.cockerspaniel.luncnow.screen.burn.model.LuncBurnItem
+import com.cockerspaniel.luncnow.screen.burn.model.LuncDescriptionItem
 import com.cockerspaniel.luncnow.usecase.TransactionsUseCase
 import com.cockerspaniel.luncnow.util.asLiveData
 import com.cockerspaniel.luncnow.util.formatNoSymbol
@@ -13,7 +13,7 @@ import com.cockerspaniel.luncnow.util.rx.SchedulerProvider
 import com.cockerspaniel.network.model.TransactionList
 import java.math.BigDecimal
 
-class MainViewModel(
+class LuncBurnViewModel(
     private val useCase: TransactionsUseCase,
     private val schedulerProvider: SchedulerProvider
 ) : BaseViewModel() {
@@ -63,10 +63,6 @@ class MainViewModel(
         )
     }
 
-    private fun getMemo(memo: String): String {
-        return memo.ifBlank { NO_NAME }
-    }
-
     private fun onError(throwable: Throwable) {
         _errorEvent.postValue(throwable)
     }
@@ -75,7 +71,6 @@ class MainViewModel(
         private const val RECEIVED = "coin_received"
         private const val LUNC = "uluna"
         private const val DECIMAL = "0.000001"
-        private const val NO_NAME = "No Name"
         private const val EMPTY_STRING = ""
     }
 }
