@@ -1,0 +1,64 @@
+{
+    "users": [
+        {
+            "address": "terra1kx0t0nlc8x92te8zrnzsn40ucln6k0t2kk7vgd",
+            "name": "루나아빠 코인",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra1l89wwwl83f7j978dd8rznxlqtna6k4gwgpq3z6",
+            "name": "하비의세상",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra12hrze5nvvwrnv2anmk9vxxr95fscfcz59zxu3m",
+            "name": "자본선비",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra1627dd0pd0szxxsxn5tfled7ny5a9g3qqgrmr9c",
+            "name": "Hoon Kyung Park",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra1hnz8a8as22ekn8l8lpc2qdxmnwvlplqms4s4kr",
+            "name": "Changmin lee",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra16ymak0e7ec2s5krdyehepugh24u450l08u3kq2",
+            "name": "전가통신",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra13g90nt747zkms2v0kzm6yzzvsql5jfcckr6knh",
+            "name": "이근석",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra107mzwl56cmahms0ef94x63adstmt0g3hcqptl4",
+            "name": "caon Park",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra1p9rvw3ht35p78sw37z6erxy32jpzlk6chcr0tj",
+            "name": "류제영",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra1y8wzdgx9hek8vg2x4jl9ek2dhcmwlet8fg0juz",
+            "name": "Charlie Shin",
+            "country": "kr",
+            "country_full": "South Korea"
+        }
+    ]
+}

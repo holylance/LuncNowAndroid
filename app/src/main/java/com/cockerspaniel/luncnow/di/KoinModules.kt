@@ -1,5 +1,6 @@
 package com.cockerspaniel.luncnow.di
 
+import com.cockerspaniel.luncnow.repository.StakingUserRepository
 import com.cockerspaniel.luncnow.repository.TransactionsRepository
 import com.google.gson.GsonBuilder
 import com.cockerspaniel.luncnow.screen.burn.LuncBurnViewModel
@@ -23,6 +24,7 @@ val appModule = module {
     factoryOf(::DefaultSchedulerProvider) bind SchedulerProvider::class
     factoryOf(::TransactionsRepository)
     factoryOf(::TransactionsUseCase)
+    factoryOf(::StakingUserRepository)
 
     single { TransactionsApiFactory.create() }
 
