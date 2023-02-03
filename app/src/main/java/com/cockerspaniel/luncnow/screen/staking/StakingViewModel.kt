@@ -23,12 +23,13 @@ class StakingViewModel(
 
     fun fetchStaking() {
         val list = stakingUserRepository.getUsers()
+        var ranking = 1
         _viewState.postValue(
             list.users.map {
                 StakingItem(
                     address = it.address,
                     name = it.name,
-                    ranking = 1,
+                    ranking = ranking++,
                     country = it.country,
                     countryFull = it.countryFull,
                     amountNum = BigDecimal.ONE,

@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:gravity="center"
-            android:layout_marginStart="@dimen/spacing_m"
+            android:layout_marginStart="@dimen/spacing_s"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/name"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,25 +31,23 @@
             app:layout_constraintHorizontal_bias="0.0"
             tools:text="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/country"
-            style="@style/Widget.LuncNow.Textview"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:gravity="center"
             android:layout_marginStart="@dimen/spacing_m"
-            android:layout_marginEnd="@dimen/spacing_m"
+            android:layout_marginEnd="@dimen/spacing_s"
             app:layout_constraintTop_toTopOf="@id/ranking"
             app:layout_constraintBottom_toBottomOf="@id/ranking"
             app:layout_constraintStart_toEndOf="@id/ranking"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintHorizontal_weight="1.0"
-            tools:text="Kor" />
+            app:layout_constraintHorizontal_weight="1.0" />
 
         <TextView
             android:id="@+id/name"
-            style="@style/Widget.LuncNow.TextviewSmall"
+            style="@style/Widget.LuncNow.TextviewMedium"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_marginStart="@dimen/spacing_m"
