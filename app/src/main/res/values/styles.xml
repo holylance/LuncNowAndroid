@@ -29,6 +29,12 @@
         <item name="android:padding">4dp</item>
     </style>
 
+    <style name="Widget.LuncNow.TextviewMedium" parent="@style/TextAppearance.LuncNow.L">
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
     <style name="Widget.LuncNow.TextviewSmall" parent="@style/TextAppearance.LuncNow.S">
         <item name="android:singleLine">true</item>
         <item name="android:maxLines">1</item>
