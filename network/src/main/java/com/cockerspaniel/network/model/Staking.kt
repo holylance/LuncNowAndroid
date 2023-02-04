@@ -6,5 +6,6 @@ import java.math.BigDecimal
 
 @Parcelize
 data class Staking(
+    val address: String,
     val delegationTotal: BigDecimal
 ) : Parcelable

@@ -6,7 +6,8 @@ internal data class StakingResponse(
     val delegationTotal: String
 ) {
 
-    internal fun toStaking() = Staking(
+    internal fun toStaking(address: String) = Staking(
+        address = address,
         delegationTotal = delegationTotal.toBigDecimal()
     )
 }

@@ -16,7 +16,7 @@ internal class TerraClassicServiceImpl(
 
     override fun getStaking(address: String): Single<Staking> {
         return terraClassicApiService.getStaking(address)
-            .map { it.toStaking() }
+            .map { it.toStaking(address) }
     }
 
     companion object {
