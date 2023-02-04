@@ -1,14 +1,14 @@
 package com.cockerspaniel.luncnow.repository
 
 import com.cockerspaniel.network.TerraClassicService
-import com.cockerspaniel.network.model.TransactionList
+import com.cockerspaniel.network.model.Staking
 import io.reactivex.rxjava3.core.Single
 
-class TransactionsRepository(
+class StakingRepository(
     private val terraClassicService: TerraClassicService
 ) {
 
-    fun fetchTransactions(): Single<TransactionList> {
-        return terraClassicService.getTransactions()
+    fun fetchStaking(address: String): Single<Staking> {
+        return terraClassicService.getStaking(address)
     }
 }

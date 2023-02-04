@@ -2,6 +2,9 @@ package com.cockerspaniel.luncnow.screen.burn
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.cockerspaniel.luncnow.screen.base.BaseValues.DECIMAL
+import com.cockerspaniel.luncnow.screen.base.BaseValues.EMPTY_STRING
+import com.cockerspaniel.luncnow.screen.base.BaseValues.LUNC
 import com.cockerspaniel.luncnow.screen.base.BaseViewModel
 import com.cockerspaniel.luncnow.screen.burn.model.LuncBurnItem
 import com.cockerspaniel.luncnow.screen.burn.model.LuncDescriptionItem
@@ -39,7 +42,9 @@ class LuncBurnViewModel(
                     event -> event.type == RECEIVED &&
                         event.attributes.last().value.contains(LUNC)
                 }?.attributes?.last()?.value?.replace(LUNC, EMPTY_STRING)
-                first?.let { foundAmount = (first.toBigDecimal() * BigDecimal(DECIMAL)).toString() }
+                first?.let {
+                    foundAmount = (first.toBigDecimal() * BigDecimal(DECIMAL)).toString()
+                }
             }
             LuncBurnItem(
                 name = getMemo(info.tx.value.memo),
@@ -69,8 +74,5 @@ class LuncBurnViewModel(
 
     companion object {
         private const val RECEIVED = "coin_received"
-        private const val LUNC = "uluna"
-        private const val DECIMAL = "0.000001"
-        private const val EMPTY_STRING = ""
     }
 }

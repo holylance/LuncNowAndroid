@@ -19,7 +19,7 @@ class StakingItemViewHolder(
             amount.text = item.amount
 
             Glide.with(root)
-                .load(BaseValues.FLAG_URL.value + item.country)
+                .load(BaseValues.FLAG_URL + item.country)
                 .into(country)
         }
     }
