@@ -1,5 +1,8 @@
 package com.cockerspaniel.luncnow.screen.base
 
-enum class BaseValues(val value: String) {
-    FLAG_URL("https://countryflagsapi.com/png/")
+object BaseValues {
+    const val DECIMAL = "0.000001"
+    const val EMPTY_STRING = ""
+    const val FLAG_URL = "https://countryflagsapi.com/png/"
+    const val LUNC = "uluna"
 }

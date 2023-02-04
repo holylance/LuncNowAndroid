@@ -1,7 +1,7 @@
 package com.cockerspaniel.network
 
-import com.cockerspaniel.network.internal.TransactionsApiService
-import com.cockerspaniel.network.internal.TransactionsServiceImpl
+import com.cockerspaniel.network.internal.TerraClassicApiService
+import com.cockerspaniel.network.internal.TerraClassicServiceImpl
 import com.cockerspaniel.network.mockdata.TempRequestMock
 import com.cockerspaniel.network.mockdata.TransactionResponseMock
 import com.nhaarman.mockitokotlin2.any
@@ -13,14 +13,14 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-internal class TransactionsServiceImplTest {
+internal class TerraClassicServiceImplTest {
 
-    private val transactionsApiService: TransactionsApiService = mock()
-    private lateinit var transactionService: TransactionsServiceImpl
+    private val terraClassicApiService: TerraClassicApiService = mock()
+    private lateinit var transactionService: TerraClassicServiceImpl
 
     @BeforeEach
     fun setUp() {
-        transactionService = TransactionsServiceImpl(transactionsApiService)
+        transactionService = TerraClassicServiceImpl(terraClassicApiService)
     }
 
     @Nested
@@ -28,12 +28,12 @@ internal class TransactionsServiceImplTest {
         @Test
         fun `when call postTransaction, reach TransactionApiService's postTransaction`() {
             val transactionRequest = TempRequestMock.generate()
-            whenever(TransactionsApiService.postTransaction(transactionRequest))
+            whenever(TerraClassicApiService.postTransaction(transactionRequest))
                 .thenReturn(Single.just(TransactionResponseMock.generate()))
 
-            TransactionsService.Transaction(transactionRequest.email, transactionRequest.password)
+            TerraClassicService.Transaction(transactionRequest.email, transactionRequest.password)
 
-            verify(TransactionsApiService).postTransaction(any())
+            verify(TerraClassicApiService).postTransaction(any())
         }
     }
 }

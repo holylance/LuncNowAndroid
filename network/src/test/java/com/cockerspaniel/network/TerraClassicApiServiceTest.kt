@@ -1,6 +1,6 @@
 package com.cockerspaniel.network
 
-import com.cockerspaniel.network.internal.TransactionsApiService
+import com.cockerspaniel.network.internal.TerraClassicApiService
 import com.google.gson.GsonBuilder
 import com.cockerspaniel.network.mockdata.TempRequestMock
 import com.cockerspaniel.network.mockdata.TransactionMock
@@ -14,7 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-internal class TransactionsApiServiceTest {
+internal class TerraClassicApiServiceTest {
     private val mockWebServer = MockWebServer()
     private val httpClient = OkHttpClient.Builder()
     private val gson = GsonBuilder().create()
@@ -27,7 +27,7 @@ internal class TransactionsApiServiceTest {
         )
         .client(httpClient.build())
         .build()
-    private val service = retrofit.create(TransactionsApiService::class.java)
+    private val service = retrofit.create(TerraClassicApiService::class.java)
     private val transaction = TransactionMock.generate()
 
     @After
