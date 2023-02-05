@@ -7,7 +7,6 @@ import com.cockerspaniel.luncnow.screen.base.BaseValues.DECIMAL
 import com.cockerspaniel.luncnow.screen.base.BaseViewModel
 import com.cockerspaniel.luncnow.screen.staking.model.StakingItem
 import com.cockerspaniel.luncnow.screen.staking.model.StakingUser
-import com.cockerspaniel.luncnow.screen.staking.model.StakingUsers
 import com.cockerspaniel.luncnow.usecase.StakingUseCase
 import com.cockerspaniel.luncnow.util.asLiveData
 import com.cockerspaniel.luncnow.util.formatNoSymbol
@@ -22,7 +21,7 @@ class StakingViewModel(
     private val schedulerProvider: SchedulerProvider
 ) : BaseViewModel() {
 
-    private val _viewState = MutableLiveData<List<ListItemModel>>(emptyList())
+    private val _viewState = MutableLiveData<List<ListItemModel>>()
     val viewState: LiveData<List<ListItemModel>> = _viewState
 
     private val _errorEvent = MutableLiveData<Throwable>()
@@ -30,25 +29,26 @@ class StakingViewModel(
 
     fun fetchStaking() {
         val list = stakingUserRepository.getUsers()
-        list.users.map { user ->
-            useCase.fetchStaking(user.address)
-                .subscribeOn(schedulerProvider.io())
-                .subscribe({ onSuccess(user, it) }, ::onError)
-                .let(::bind)
-        }
+        val listAddress = list.users.map { it.address }
+        useCase.fetchStaking(listAddress)
+            .subscribeOn(schedulerProvider.io())
+            .subscribe(::onSuccess, ::onError)
+            .let(::bind)
     }
 
-    private fun onSuccess(user: StakingUser, staking: Staking) {
+    private fun onSuccess(listStaking: List<Staking>) {
+        val list = stakingUserRepository.getUsers()
+        val sortedList = mutableListOf<StakingItem>()
         var ranking = 1
-        val results = _viewState.value
-        results?.let { items ->
-            val temp = items.toMutableList()
-            temp.add(generateItem(user, staking, ranking))
-            _viewState.postValue(
-                temp.filterIsInstance<StakingItem>().sortedByDescending { it.amountNum }
-                    .map { it.copy(ranking = ranking++) }
-            )
-        } ?: run { _viewState.postValue(listOf(generateItem(user, staking, ranking))) }
+        listStaking.map { staking ->
+            list.users.map { user ->
+                if (staking.address == user.address)
+                    sortedList.add(generateItem(user, staking, ranking))
+            }
+        }
+        _viewState.postValue(
+            sortedList.sortedByDescending { it.amountNum }.map { it.copy(ranking = ranking++) }
+        )
     }
 
     private fun generateItem(user: StakingUser, staking: Staking, ranking: Int) = StakingItem(
