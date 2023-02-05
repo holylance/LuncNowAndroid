@@ -3,6 +3,7 @@ package com.cockerspaniel.luncnow.screen.staking
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.cockerspaniel.luncnow.R
 import com.cockerspaniel.luncnow.databinding.FragmentStakingBinding
 import com.cockerspaniel.luncnow.screen.base.BaseFragment
@@ -26,6 +27,7 @@ class StakingFragment : BaseFragment(R.layout.fragment_staking) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.loading.isVisible = true
         binding.listStaking.adapter = adapter
         viewModel.fetchStaking()
     }
@@ -38,9 +40,11 @@ class StakingFragment : BaseFragment(R.layout.fragment_staking) {
     override fun observeViewState() {
         observe(viewModel.viewState) { state ->
             adapter.setItems(state)
+            binding.loading.isVisible = false
         }
 
         observe(viewModel.errorEvent) {
+            binding.loading.isVisible = false
             Toast.makeText(context, R.string.error_message, Toast.LENGTH_SHORT).show()
         }
     }
