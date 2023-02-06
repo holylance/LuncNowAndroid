@@ -6,6 +6,7 @@ import com.cockerspaniel.luncnow.repository.StakingUserRepository
 import com.cockerspaniel.luncnow.screen.base.BaseValues.DECIMAL
 import com.cockerspaniel.luncnow.screen.base.BaseViewModel
 import com.cockerspaniel.luncnow.screen.staking.model.StakingItem
+import com.cockerspaniel.luncnow.screen.staking.model.StakingTitleItem
 import com.cockerspaniel.luncnow.screen.staking.model.StakingUser
 import com.cockerspaniel.luncnow.usecase.StakingUseCase
 import com.cockerspaniel.luncnow.util.asLiveData
@@ -47,7 +48,8 @@ class StakingViewModel(
             }
         }
         _viewState.postValue(
-            sortedList.sortedByDescending { it.amountNum }.map { it.copy(ranking = ranking++) }
+            listOf(StakingTitleItem) + sortedList.sortedByDescending { it.amountNum }
+                .map { it.copy(ranking = ranking++) }
         )
     }
 
