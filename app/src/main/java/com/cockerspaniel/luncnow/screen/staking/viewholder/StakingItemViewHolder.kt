@@ -2,8 +2,10 @@ package com.cockerspaniel.luncnow.screen.staking.viewholder
 
 import com.bumptech.glide.Glide
 import com.cockerspaniel.luncnow.databinding.StakingItemBinding
+import com.cockerspaniel.luncnow.databinding.StakingTitleItemBinding
 import com.cockerspaniel.luncnow.screen.base.BaseValues
 import com.cockerspaniel.luncnow.screen.staking.model.StakingItem
+import com.cockerspaniel.luncnow.screen.staking.model.StakingTitleItem
 import com.cockerspaniel.luncnow.util.listadapter.BindingViewHolder
 import com.cockerspaniel.luncnow.util.listadapter.ListItemAction
 
@@ -23,4 +25,11 @@ class StakingItemViewHolder(
                 .into(country)
         }
     }
+}
+
+class StakingTitleItemViewHolder(
+    binding: StakingTitleItemBinding
+) : BindingViewHolder<StakingTitleItem, ListItemAction>(binding.root) {
+
+    override fun bind(item: StakingTitleItem) = Unit
 }

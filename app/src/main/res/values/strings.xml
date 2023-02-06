@@ -6,7 +6,7 @@
     <string name="lunc_burn_description">Sent Lunc to burn recently.</string>
     <string name="error_message">Something wrong. Please try it later.</string>
 
-    <string name="staking_title">Staking ranking</string>
+    <string name="staking_title">Lunc staking ranking</string>
 
     <string name="bottom_menu_lunc_burn">Recent burn</string>
     <string name="bottom_menu_staking">Staking ranking</string>
