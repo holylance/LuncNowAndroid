@@ -10,7 +10,8 @@ import com.cockerspaniel.luncnow.usecase.StakingUseCase
 import com.cockerspaniel.luncnow.usecase.TransactionsUseCase
 import com.cockerspaniel.luncnow.util.rx.DefaultSchedulerProvider
 import com.cockerspaniel.luncnow.util.rx.SchedulerProvider
-import com.cockerspaniel.network.TransactionsApiFactory
+import com.cockerspaniel.luncnow.util.storage.PreferenceStoreImpl
+import com.cockerspaniel.network.TerraClassicApiFactory
 import org.koin.android.ext.android.getKoin
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModelOf
@@ -24,15 +25,18 @@ val appModule = module {
     factory { androidApplication().getKoin() }
     factory { GsonBuilder().create() }
     factoryOf(::DefaultSchedulerProvider) bind SchedulerProvider::class
+    factoryOf(::PreferenceStoreImpl)
 
+    // Transaction page
     factoryOf(::TransactionsRepository)
     factoryOf(::TransactionsUseCase)
 
+    // Staking Ranking page
     factoryOf(::StakingUserRepository)
     factoryOf(::StakingRepository)
     factoryOf(::StakingUseCase)
 
-    single { TransactionsApiFactory.create() }
+    single { TerraClassicApiFactory.create() }
 
     viewModelOf(::LuncBurnViewModel)
     viewModelOf(::StakingViewModel)
