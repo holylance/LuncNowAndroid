@@ -57,7 +57,8 @@ class LuncBurnViewModel(
                     BigDecimal(foundAmount).formatNoSymbol()
                 } else {
                     EMPTY_STRING
-                }
+                },
+                time = info.timestamp
             )
         }
 

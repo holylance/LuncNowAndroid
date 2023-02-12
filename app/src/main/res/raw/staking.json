@@ -77,6 +77,30 @@
             "name": "대박꿈",
             "country": "kr",
             "country_full": "South Korea"
+        },
+        {
+            "address": "terra1yr0xrfaz7hl3fsrxpuw266msk8zr7vtvdsgfnd",
+            "name": "Dragonfeel",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra1symyh4l5eef2asm00hyjzrq7g5kxzxf5qfsxfg",
+            "name": "Original_Pi",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra1m584j9tysucyxlz2ajx6uzwq4kgpmkhzlezqul",
+            "name": "Minryeong",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra177el3plxp45tqhwd0xdgdnk8fnx9r5gn7mgsss",
+            "name": "마오",
+            "country": "kr",
+            "country_full": "South Korea"
         }
     ]
 }
