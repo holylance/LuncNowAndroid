@@ -1,12 +1,6 @@
 {
     "users": [
         {
-            "address": "terra1kx0t0nlc8x92te8zrnzsn40ucln6k0t2kk7vgd",
-            "name": "루나아빠 코인",
-            "country": "kr",
-            "country_full": "South Korea"
-        },
-        {
             "address": "terra1l89wwwl83f7j978dd8rznxlqtna6k4gwgpq3z6",
             "name": "하비의세상",
             "country": "kr",
@@ -75,6 +69,36 @@
         {
             "address": "terra1pfz3yr7tkhyas3sl4j7tfkmusjmdp6gys4e5mu",
             "name": "대박꿈",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra1yr0xrfaz7hl3fsrxpuw266msk8zr7vtvdsgfnd",
+            "name": "Dragonfeel",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra1symyh4l5eef2asm00hyjzrq7g5kxzxf5qfsxfg",
+            "name": "Original_Pi",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra1m584j9tysucyxlz2ajx6uzwq4kgpmkhzlezqul",
+            "name": "Minryeong",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra177el3plxp45tqhwd0xdgdnk8fnx9r5gn7mgsss",
+            "name": "마오",
+            "country": "kr",
+            "country_full": "South Korea"
+        },
+        {
+            "address": "terra19nwk7qgt73rf82rarr5e4k04n26nru039z9aye",
+            "name": "이준희",
             "country": "kr",
             "country_full": "South Korea"
         }
