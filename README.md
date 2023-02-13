@@ -2,10 +2,10 @@
 ## LuncNow Android
 
 ### Features
-0. No Login App
-1. Large amount Luna classic burn tx in the last 100 txs.
-2. Donation txs in the last 100 txs. (WIP)
-3. ???(WIP)
+1. No Login App
+2. Large amount Luna classic burn tx in the last 100 txs.
+3. Top staking user competition in Korea.
+4. Top staking user competition in the world. (WIP)
 
 ### Endpoint
 [GET] *https://columbus-fcd.terra.dev/v1/txs?account=terra1sk06e3dyexuq4shw77y3dsv480xv42mq73anxu&limit=10*
