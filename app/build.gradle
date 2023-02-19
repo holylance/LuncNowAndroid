@@ -80,6 +80,6 @@ dependencies {
     testImplementation "org.threeten:threetenbp:${threetenbp_version}"
     testImplementation "org.assertj:assertj-core:${assertj_version}"
 
-    androidTestImplementation "androidx.test.ext:${jUnit_version}"
+    androidTestImplementation "androidx.test.ext:junit:${jUnit_version}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${espresso_version}"
 }
