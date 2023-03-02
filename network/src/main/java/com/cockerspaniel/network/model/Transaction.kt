@@ -6,6 +6,7 @@ import java.time.ZonedDateTime
 
 @Parcelize
 data class Transaction(
+    val id: Long,
     val tx: TransactionInfo,
     val logs: List<Log>,
     val timestamp: ZonedDateTime

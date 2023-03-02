@@ -6,7 +6,6 @@ import com.cockerspaniel.luncnow.screen.burn.model.LuncBurnItem
 import com.cockerspaniel.luncnow.screen.burn.model.LuncDescriptionItem
 import com.cockerspaniel.luncnow.util.listadapter.BindingViewHolder
 import com.cockerspaniel.luncnow.util.listadapter.ListItemAction
-import com.cockerspaniel.network.base.util.toParsedString
 
 class LuncBurnItemViewHolder(
     private val binding: LuncBurnItemBinding
@@ -19,7 +18,7 @@ class LuncBurnItemViewHolder(
             ranking.text = item.ranking.toString()
             name.text = item.name
             amount.text = item.amount
-            time.text = item.time.toParsedString()
+            time.text = item.time
         }
     }
 }

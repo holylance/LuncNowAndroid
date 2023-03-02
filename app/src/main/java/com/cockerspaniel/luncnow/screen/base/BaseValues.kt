@@ -5,4 +5,5 @@ object BaseValues {
     const val EMPTY_STRING = ""
     const val FLAG_URL = "https://countryflagsapi.com/png/"
     const val LUNC = "uluna"
+    const val NO_NAME = "No Name"
 }

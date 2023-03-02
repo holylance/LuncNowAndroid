@@ -1,7 +1,7 @@
 package com.cockerspaniel.luncnow.screen.base
 
 import androidx.lifecycle.ViewModel
-import com.cockerspaniel.luncnow.screen.burn.LuncBurnViewModel
+import com.cockerspaniel.luncnow.screen.base.BaseValues.NO_NAME
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 
@@ -27,9 +27,5 @@ abstract class BaseViewModel : ViewModel() {
     override fun onCleared() {
         compositeDisposable.dispose()
         super.onCleared()
-    }
-
-    companion object {
-        private const val NO_NAME = "No Name"
     }
 }
