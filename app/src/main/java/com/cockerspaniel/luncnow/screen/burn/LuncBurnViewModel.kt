@@ -8,16 +8,19 @@ import com.cockerspaniel.luncnow.screen.base.BaseValues.LUNC
 import com.cockerspaniel.luncnow.screen.base.BaseViewModel
 import com.cockerspaniel.luncnow.screen.burn.model.LuncBurnItem
 import com.cockerspaniel.luncnow.screen.burn.model.LuncDescriptionItem
+import com.cockerspaniel.luncnow.usecase.LuncBurnItemUseCase
 import com.cockerspaniel.luncnow.usecase.TransactionsUseCase
 import com.cockerspaniel.luncnow.util.asLiveData
 import com.cockerspaniel.luncnow.util.formatNoSymbol
 import com.cockerspaniel.luncnow.util.listadapter.ListItemModel
 import com.cockerspaniel.luncnow.util.rx.SchedulerProvider
+import com.cockerspaniel.network.base.util.toParsedString
 import com.cockerspaniel.network.model.TransactionList
 import java.math.BigDecimal
 
 class LuncBurnViewModel(
     private val useCase: TransactionsUseCase,
+    private val itemUseCase: LuncBurnItemUseCase,
     private val schedulerProvider: SchedulerProvider
 ) : BaseViewModel() {
 
@@ -47,6 +50,7 @@ class LuncBurnViewModel(
                 }
             }
             LuncBurnItem(
+                id = info.id,
                 name = getMemo(info.tx.value.memo),
                 amountNum = if (foundAmount.isNotBlank()) {
                     BigDecimal(foundAmount)
@@ -58,14 +62,12 @@ class LuncBurnViewModel(
                 } else {
                     EMPTY_STRING
                 },
-                time = info.timestamp
+                time = info.timestamp.toParsedString()
             )
         }
 
-        var ranking = 1
         _viewState.postValue(
-            listOf(LuncDescriptionItem()) +
-                listItems.sortedByDescending { it.amountNum }.map { it.copy(ranking = ranking++) }
+            listOf(LuncDescriptionItem()) + itemUseCase.getItemList(listItems)
         )
     }
 
