@@ -6,5 +6,5 @@ internal data class TransactionInfoResponse(
     val value: TransactionValueResponse
 ) {
 
-    internal fun toTransactionInfo() = TransactionInfo(value = value.toTransactionValue())
+    fun toTransactionInfo() = TransactionInfo(value = value.toTransactionValue())
 }

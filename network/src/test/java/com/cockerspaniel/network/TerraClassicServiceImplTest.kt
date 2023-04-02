@@ -2,8 +2,8 @@ package com.cockerspaniel.network
 
 import com.cockerspaniel.network.internal.TerraClassicApiService
 import com.cockerspaniel.network.internal.TerraClassicServiceImpl
-import com.cockerspaniel.network.mockdata.TempRequestMock
-import com.cockerspaniel.network.mockdata.TransactionResponseMock
+import com.cockerspaniel.network.mockdata.EventResponseMock
+import com.cockerspaniel.network.mockdata.LogsResponseMock
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -27,9 +27,9 @@ internal class TerraClassicServiceImplTest {
     inner class Log {
         @Test
         fun `when call postTransaction, reach TransactionApiService's postTransaction`() {
-            val transactionRequest = TempRequestMock.generate()
+            val transactionRequest = EventResponseMock.generate()
             whenever(TerraClassicApiService.postTransaction(transactionRequest))
-                .thenReturn(Single.just(TransactionResponseMock.generate()))
+                .thenReturn(Single.just(LogsResponseMock.generate()))
 
             TerraClassicService.Transaction(transactionRequest.email, transactionRequest.password)
 

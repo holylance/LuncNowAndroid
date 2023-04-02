@@ -7,5 +7,5 @@ internal data class AttributeResponse(
     val value: String,
 ) {
 
-    internal fun toAttribute() = Attribute(key, value)
+    fun toAttribute() = Attribute(key, value)
 }

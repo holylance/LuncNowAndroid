@@ -60,6 +60,6 @@ internal class RetrofitService(
         }
 
     companion object {
-        private const val apiUrl = "https://columbus-fcd.terra.dev/"
+        private const val apiUrl = "https://terra-classic-fcd.publicnode.com/"
     }
 }

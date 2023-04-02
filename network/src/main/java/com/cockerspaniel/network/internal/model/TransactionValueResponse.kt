@@ -6,5 +6,5 @@ internal data class TransactionValueResponse(
     val memo: String
 ) {
 
-    internal fun toTransactionValue() = TransactionValue(memo = memo)
+    fun toTransactionValue() = TransactionValue(memo = memo)
 }
