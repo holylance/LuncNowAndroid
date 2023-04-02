@@ -6,7 +6,7 @@ internal data class LogsResponse(
     val events: List<EventResponse>
 ) {
 
-    internal fun toLogs() = Log(
+    fun toLogs() = Log(
         events = events.map { it.toEvent() }
     )
 }

@@ -10,7 +10,7 @@ internal data class TransactionResponse(
     val timestamp: String
 ) {
 
-    internal fun toTransactionInfo() = Transaction(
+    fun toTransactionInfo() = Transaction(
         id = id,
         tx = tx.toTransactionInfo(),
         logs = logs.map { it.toLogs() },

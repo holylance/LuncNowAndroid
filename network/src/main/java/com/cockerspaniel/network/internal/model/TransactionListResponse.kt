@@ -7,7 +7,7 @@ internal data class TransactionListResponse(
     val txs: List<TransactionResponse>
 ) {
 
-    internal fun toTransactionList() = TransactionList(
+    fun toTransactionList() = TransactionList(
         limit = limit,
         txs = txs.map { it.toTransactionInfo() }
     )
