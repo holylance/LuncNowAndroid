@@ -2,8 +2,7 @@ package com.cockerspaniel.network
 
 import com.cockerspaniel.network.internal.TerraClassicApiService
 import com.cockerspaniel.network.internal.TerraClassicServiceImpl
-import com.cockerspaniel.network.mockdata.EventResponseMock
-import com.cockerspaniel.network.mockdata.LogsResponseMock
+import com.cockerspaniel.network.mockdata.TransactionListResponseMock
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -16,24 +15,23 @@ import org.junit.jupiter.api.Test
 internal class TerraClassicServiceImplTest {
 
     private val terraClassicApiService: TerraClassicApiService = mock()
-    private lateinit var transactionService: TerraClassicServiceImpl
+    private lateinit var terraClassicService: TerraClassicServiceImpl
 
     @BeforeEach
     fun setUp() {
-        transactionService = TerraClassicServiceImpl(terraClassicApiService)
+        terraClassicService = TerraClassicServiceImpl(terraClassicApiService)
     }
 
     @Nested
     inner class Log {
         @Test
-        fun `when call postTransaction, reach TransactionApiService's postTransaction`() {
-            val transactionRequest = EventResponseMock.generate()
-            whenever(TerraClassicApiService.postTransaction(transactionRequest))
-                .thenReturn(Single.just(LogsResponseMock.generate()))
+        fun `when call getTransactions, reach TerraClassicApiService's getTransactions`() {
+            whenever(terraClassicApiService.getTransactions(any(), any()))
+                .thenReturn(Single.just(TransactionListResponseMock.generate()))
 
-            TerraClassicService.Transaction(transactionRequest.email, transactionRequest.password)
+            terraClassicService.getTransactions()
 
-            verify(TerraClassicApiService).postTransaction(any())
+            verify(terraClassicApiService).getTransactions(any(), any())
         }
     }
 }
