@@ -4,6 +4,7 @@ import com.cockerspaniel.network.internal.TerraClassicApiService
 import com.google.gson.GsonBuilder
 import com.cockerspaniel.network.mockdata.EventResponseMock
 import com.cockerspaniel.network.mockdata.AttributeResponseMock
+import com.cockerspaniel.network.mockdata.TransactionListResponseMock
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -28,7 +29,7 @@ internal class TerraClassicApiServiceTest {
         .client(httpClient.build())
         .build()
     private val service = retrofit.create(TerraClassicApiService::class.java)
-    private val transaction = AttributeResponseMock.generate()
+    private val transactionList = TransactionListResponseMock.generate()
 
     @After
     fun stopServer() {
@@ -53,25 +54,23 @@ internal class TerraClassicApiServiceTest {
     }
 
     @Nested
-    inner class Login {
+    inner class Transactions {
 
         @Test
-        fun `postLogin handles successful response`() {
-            setSuccessResponseInMockWebServer(loginToken)
+        fun `getTransactions handles successful response`() {
+            setSuccessResponseInMockWebServer(transactionList)
 
-            service.postLogin(EventResponseMock.generate())
+            service.getTransactions("10", 10)
                 .test()
-                .assertValue {
-                    it.token == loginToken.token
-                }
+                .assertValue { it == transactionList }
                 .dispose()
         }
 
         @Test
-        fun `getTodos handles error response`() {
+        fun `getTransactions handles error response`() {
             setFailedResponseInMockWebServer()
 
-            service.postLogin(EventResponseMock.generate())
+            service.getTransactions("10", 10)
                 .test()
                 .assertError { throwable ->
                     throwable.message == "HTTP 401 Client Error"

@@ -21,9 +21,13 @@ class StakingItemViewHolder(
             amount.text = item.amount
 
             Glide.with(root)
-                .load(BaseValues.FLAG_URL + item.country)
+                .load(BaseValues.FLAG_URL + item.country + SVG)
                 .into(country)
         }
+    }
+
+    companion object {
+        private const val SVG = ".svg"
     }
 }
 
