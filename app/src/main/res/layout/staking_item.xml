@@ -38,6 +38,7 @@
             android:gravity="center"
             android:layout_marginStart="@dimen/spacing_m"
             android:layout_marginEnd="@dimen/spacing_s"
+            android:src="@drawable/ic_kr"
             app:layout_constraintTop_toTopOf="@id/ranking"
             app:layout_constraintBottom_toBottomOf="@id/ranking"
             app:layout_constraintStart_toEndOf="@id/ranking"

@@ -21,10 +21,11 @@ class LuncBurnItemUseCase(private val preferenceStore: PreferenceStoreImpl) {
         } ?: run { newList }
 
         var ranking = 1
-        val finalList = updatedList.sortedByDescending { it.amountNum }
+        val finalList = updatedList.asSequence().sortedByDescending { it.amountNum }
             .distinctBy { it.id }
+            .distinctBy { it.time }
             .take(LIMIT_TOP)
-            .map { it.copy(ranking = ranking++) }
+            .map { it.copy(ranking = ranking++) }.toList()
 
         preferenceStore.persistObject(
             LIST_LUNC_ITEM,
