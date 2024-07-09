@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         setupBottomNavigationBar()
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         // First handler is currently active fragment
         if ((currentFragment() as? BaseFragment)?.onBackPressed() != true) {

@@ -5,6 +5,5 @@
     app:startDestination="@+id/burn_nav_graph">
 
     <include app:graph="@navigation/burn_nav_graph" />
-    <include app:graph="@navigation/staking_nav_graph" />
 
 </navigation>

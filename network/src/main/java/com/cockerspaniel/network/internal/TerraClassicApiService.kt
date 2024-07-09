@@ -1,11 +1,9 @@
 package com.cockerspaniel.network.internal
 
-import com.cockerspaniel.network.internal.model.StakingResponse
 import com.cockerspaniel.network.internal.model.TransactionListResponse
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Retrofit
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 internal interface TerraClassicApiService {
@@ -17,12 +15,6 @@ internal interface TerraClassicApiService {
         @Query("limit")
         limit: Int
     ): Single<TransactionListResponse>
-
-    @GET("v1/staking/{address}")
-    fun getStaking(
-        @Path("address")
-        address: String
-    ): Single<StakingResponse>
 
     companion object {
         fun create(retrofit: Retrofit): TerraClassicApiService {

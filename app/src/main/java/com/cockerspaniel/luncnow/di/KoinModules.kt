@@ -1,13 +1,9 @@
 package com.cockerspaniel.luncnow.di
 
-import com.cockerspaniel.luncnow.repository.StakingRepository
-import com.cockerspaniel.luncnow.repository.StakingUserRepository
 import com.cockerspaniel.luncnow.repository.TransactionsRepository
 import com.google.gson.GsonBuilder
 import com.cockerspaniel.luncnow.screen.burn.LuncBurnViewModel
-import com.cockerspaniel.luncnow.screen.staking.StakingViewModel
 import com.cockerspaniel.luncnow.usecase.LuncBurnItemUseCase
-import com.cockerspaniel.luncnow.usecase.StakingUseCase
 import com.cockerspaniel.luncnow.usecase.TransactionsUseCase
 import com.cockerspaniel.luncnow.util.rx.DefaultSchedulerProvider
 import com.cockerspaniel.luncnow.util.rx.SchedulerProvider
@@ -42,13 +38,7 @@ val appModule = module {
     factoryOf(::TransactionsUseCase)
     factoryOf(::LuncBurnItemUseCase)
 
-    // Staking Ranking page
-    factoryOf(::StakingUserRepository)
-    factoryOf(::StakingRepository)
-    factoryOf(::StakingUseCase)
-
     single { TerraClassicApiFactory.create() }
 
     viewModelOf(::LuncBurnViewModel)
-    viewModelOf(::StakingViewModel)
 }
